@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', apps.blog.views.BlogPostListView.as_view(), name='home'),
+    url(r'^post/(?P<pk>\d+)/$', apps.blog.views.BlogPostDetailView.as_view(), name='blogpost'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

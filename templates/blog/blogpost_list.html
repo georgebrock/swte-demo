@@ -1,11 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>My Blog</h1>
-
   <ol>
     {% for post in blogpost_list %}
-      <li>{{ post.title }}</li>
+      <li><a href='{% url "blogpost" post.pk %}'>{{ post.title }}</a></li>
     {% endfor %}
   </ol>
 {% endblock %}
