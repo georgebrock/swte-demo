@@ -8,3 +8,6 @@ class BlogPost(models.Model):
     body = models.TextField()
     published = models.BooleanField()
     publish_date = models.DateTimeField()
+
+    def __unicode__(self):
+        return self.title
