@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView, CreateView
 
 from apps.blog.models import BlogPost
+from apps.blog.forms import BlogPostForm
 
 
 class BlogPostListView(ListView):
@@ -20,3 +21,4 @@ class BlogPostDetailView(DetailView):
 
 class BlogPostCreateView(CreateView):
     model = BlogPost
+    form_class = BlogPostForm
