@@ -10,4 +10,9 @@ class BlogPostListView(ListView):
 
 class BlogPostDetailView(DetailView):
     model = BlogPost
-    queryset = BlogPost.objects.filter(published=True)
+
+    def get_queryset(self):
+        if self.request.GET.get("preview"):
+            return BlogPost.objects.all()
+        else:
+            return BlogPost.objects.filter(published=True)
