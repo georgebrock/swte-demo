@@ -6,4 +6,6 @@
       <li><a href='{% url "blogpost" post.pk %}'>{{ post.title }}</a></li>
     {% endfor %}
   </ol>
+
+  <a href='{% url "new_blogpost" %}'>Write a new post</a>
 {% endblock %}

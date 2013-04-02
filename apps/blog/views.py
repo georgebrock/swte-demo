@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
 from apps.blog.models import BlogPost
 
@@ -16,3 +16,7 @@ class BlogPostDetailView(DetailView):
             return BlogPost.objects.all()
         else:
             return BlogPost.objects.filter(published=True)
+
+
+class BlogPostCreateView(CreateView):
+    model = BlogPost
